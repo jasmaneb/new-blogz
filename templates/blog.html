@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Listing of Your Blog Posts</h1>
+
+{% if entries|length == 0 %}
+<p>No entries yet</p>
+{% else %}
+
+    <ul>
+        {% for entry in entries %}
+        
+        <li>
+            <a href="/blog?id={{entry.id}}">
+            <h2>{{entry.title}}</h2></a>
+            <p>{{entry.body}}</p>
+            <p>{{entry.title_error}}</p>
+            <p>{{entry.body_error}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Enter Your New Blog Post</h1>
+<form method='POST'>
+        <ul><label>
+            Title:
+            <input type="text" name='title' style = "display:inline-block;" value = "{{blog_title}}" />
+        </label> </ul>
+        <ul><label>
+            Your Blog Entry:
+            <textarea rows="5" cols="50" name ='body' style = "display:inline-block;" value = "">{{blog_body}}</textarea>
+        </label></ul>
+        <p class = "error"> {{title_error}}</p>
+        <p class = "error"> {{body_error}}</p>
+        <ul><input type="submit" value='Add Blog Entry' /></ul>
+</form>
+
+{% endblock %}

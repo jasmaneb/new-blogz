@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to Your Home Pages</h1>
+   
+    <hr />
+    {% if entries|length == 0 %}
+    <p>No entries yet</p>
+    {% else %}
+        <ul>
+            {% for entry in entries %}
+            <li>
+                <h2>{{entry.title}}</h2>
+                <p>{{entry.body}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+
+    <ul>
+<h2>Select Entry</h2>
+    
+        {% for entry in completed_entries %}
+        <li>{{entry.name}}
+        <form method = "POST" action ="/select-entry" style = "display:inline-block;">
+            <input type = "hidden" name = "entry-id" value = "{{entry.id}}" />
+            <input type = "submit" value = "Select" />
+        </form>
+        </li>
+        {% endfor %}
+    </ul>
+
