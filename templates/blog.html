@@ -11,11 +11,12 @@
         {% for entry in entries %}
         
         <li>
-            <a href="/blog?id={{entry.id}}">
+            <a href="/blog?blogid={{entry.id}}">
             <h2>{{entry.title}}</h2></a>
             <p>{{entry.body}}</p>
             <p>{{entry.title_error}}</p>
             <p>{{entry.body_error}}</p>
+            <p>Written By: <a href="/blog?userid={{entry.owner_id}}"> {{entry.owner.name}}</a></p>
         </li>
         {% endfor %}
     </ul>
